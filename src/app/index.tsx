@@ -1,49 +1,23 @@
-import { StyleSheet, Text, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-
-const FoodListItem = () => {
-  return (
-    <View
-      style={{
-        backgroundColor: "gainsboro",
-        padding: 10,
-        borderRadius: 5,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
-      <View
-        style={{
-          flex: 1,
-          gap: 5,
-        }}
-      >
-        <Text
-          style={{
-            fontWeight: "bold",
-            fontSize: 16,
-          }}
-        >
-          Pizza
-        </Text>
-        <Text
-          style={{
-            color: "dimgray",
-          }}
-        >
-          350 cal, Dominos
-        </Text>
-      </View>
-      <AntDesign name="pluscircleo" size={24} color="royalblue" />
-    </View>
-  );
-};
+import { StyleSheet, View } from "react-native";
+import FoodListItem from "../components/FoodListItem";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <FoodListItem />
+      <FoodListItem
+        item={{
+          name: "Pizza",
+          calories: 350,
+          brand: "Dominos",
+        }}
+      />
+      <FoodListItem
+        item={{
+          name: "Pizza",
+          calories: 350,
+          brand: "Dominos",
+        }}
+      />
     </View>
   );
 }
@@ -54,5 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "center",
     padding: 10,
+    gap: 5,
   },
 });
