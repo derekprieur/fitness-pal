@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const FoodListItem = ({
@@ -11,16 +11,7 @@ const FoodListItem = ({
   };
 }) => {
   return (
-    <View
-      style={{
-        backgroundColor: "gainsboro",
-        padding: 10,
-        borderRadius: 5,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <View style={styles.container}>
       <View
         style={{
           flex: 1,
@@ -47,5 +38,16 @@ const FoodListItem = ({
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "gainsboro",
+    padding: 10,
+    borderRadius: 5,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+});
 
 export default FoodListItem;
